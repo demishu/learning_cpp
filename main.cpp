@@ -44,6 +44,7 @@ public:
 		this->m_len = arr.m_len;
 		this->m_arr = new DataType[arr.m_len];
 		this->m_size = sizeof(*m_arr);
+		return *this;
 	}
 	~MyArray() 
 	{
