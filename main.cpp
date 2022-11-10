@@ -24,7 +24,7 @@ public:
 	{
 		for (int i = 0; i < this->m_len; i++) {
 			DataType temp;
-			cout << "ÇëÊäÈëµÚ" << i + 1 << "ÏîµÄÊı¾İ" << endl;
+			cout << "è¯·è¾“å…¥ç¬¬" << i + 1 << "é¡¹çš„æ•°æ®" << endl;
 			cin >> temp;
 			this->m_arr[i] = temp;
 		}
@@ -34,11 +34,11 @@ public:
 	}
 	void operator()() const 
 	{
-		cout << "ArrÓĞ" << this->m_len << "¸öÔªËØ" << endl;
+		cout << "Arræœ‰" << this->m_len << "ä¸ªå…ƒç´ " << endl;
 		for (int i = 0; i < this->m_len; i++) {
-			cout << "ArrµÄµÚ" << i + 1 << "ÏîÎª£º" << this->m_arr[i] << endl;
+			cout << "Arrçš„ç¬¬" << i + 1 << "é¡¹ä¸ºï¼š" << this->m_arr[i] << endl;
 		}
-		cout << "Arr¹²Õ¼" << this->m_size <<"¸ö×Ö½Ú" << endl;
+		cout << "Arrå…±å " << this->m_size <<"ä¸ªå­—èŠ‚" << endl;
 	}
 	MyArray& operator=(const MyArray& arr) {
 		this->m_len = arr.m_len;
@@ -48,7 +48,7 @@ public:
 	~MyArray() 
 	{
 		if (this->m_arr != NULL) {
-			delete this->m_arr;
+			delete[] this->m_arr;
 			m_arr = NULL;
 		}
 	}
@@ -59,23 +59,23 @@ private:
 	int m_size;
 };
 
-//²âÊÔÓĞ²Î¹¹Ôìº¯Êı»¹ÓĞÖØÔØµÄÔËËã·û¡£
+//æµ‹è¯•æœ‰å‚æ„é€ å‡½æ•°è¿˜æœ‰é‡è½½çš„è¿ç®—ç¬¦ã€‚
 void test() {
 	int arr_len;
-	cout << "ÇëÊäÈëÏë´´½¨µÄarrµÄÔªËØÊıÁ¿£º" << endl;
+	cout << "è¯·è¾“å…¥æƒ³åˆ›å»ºçš„arrçš„å…ƒç´ æ•°é‡ï¼š" << endl;
 	cin >> arr_len;
 	string datatype;
-	cout << "ÇëÊäÈëÏëÒª´´½¨µÄarrµÄÊı¾İÀàĞÍ(int, double)" << endl;
+	cout << "è¯·è¾“å…¥æƒ³è¦åˆ›å»ºçš„arrçš„æ•°æ®ç±»å‹(int, double)" << endl;
 	cin >> datatype;
-	cout << "ÊäÈëµÄÔªËØÀàĞÍÎª£º" << datatype << endl;
+	cout << "è¾“å…¥çš„å…ƒç´ ç±»å‹ä¸ºï¼š" << datatype << endl;
 	if (datatype == "int") {
 		MyArray<int> arr(arr_len);
 		arr();
 
 		int num;
-		cout << "ÄãÏë¿´arrµÄµÚ¼¸ÏîÔªËØ£¿" << endl;
+		cout << "ä½ æƒ³çœ‹arrçš„ç¬¬å‡ é¡¹å…ƒç´ ï¼Ÿ" << endl;
 		cin >> num;
-		cout << "arrµÄµÚ" << num << "ÏîÎª" << arr[num - 1] << endl;
+		cout << "arrçš„ç¬¬" << num << "é¡¹ä¸º" << arr[num - 1] << endl;
 
 	}
 	else if (datatype == "double") {
@@ -83,18 +83,18 @@ void test() {
 		arr();
 
 		int num;
-		cout << "ÄãÏë¿´arrµÄµÚ¼¸ÏîÔªËØ£¿" << endl;
+		cout << "ä½ æƒ³çœ‹arrçš„ç¬¬å‡ é¡¹å…ƒç´ ï¼Ÿ" << endl;
 		cin >> num;
-		cout << "arrµÄµÚ" << num << "ÏîÎª" << arr[num-1] << endl;
+		cout << "arrçš„ç¬¬" << num << "é¡¹ä¸º" << arr[num-1] << endl;
 	}
 	else {
-		cout << "ÀàĞÍ²»¶Ô£¬ÇëÖØÊÔ" << endl;
+		cout << "ç±»å‹ä¸å¯¹ï¼Œè¯·é‡è¯•" << endl;
 		MyArray<int> arr(1);
 		return;
 	}
 
 }
-//²âÊÔ¿½±´¹¹Ôìº¯Êı
+//æµ‹è¯•æ‹·è´æ„é€ å‡½æ•°
 void test1() {
 	MyArray<int> arr(3);
 	arr();
