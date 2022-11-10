@@ -43,6 +43,10 @@ public:
 	MyArray& operator=(const MyArray& arr) {
 		this->m_len = arr.m_len;
 		this->m_arr = new DataType[arr.m_len];
+		for (int i = 0; i < arr.m_len; i++) 
+		{
+			this->m_arr[i] = arr.m_arr[i];
+		}
 		this->m_size = sizeof(*m_arr);
 		return *this;
 	}
